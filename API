@@ -1,0 +1,17 @@
+The API we are using is here => `https://json-server-books.onrender.com/books`
+
+Example of how the database of this api looks like :
+{
+    "id": 57597229,
+    "url": "https://www.goodreads.com/book/show/57597229-a-day-like-this?from_choice=false&from_home_module=false",
+    "title": "A Day Like This",
+    "author": "Kelley McNeil",
+    "imageURL": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1626938014l/57597229.jpg",
+    "description": "What if everything you’ve ever loved, ever known, ever believed to be true…just disappeared?nnAnnie Beyers has everything—a beautiful house, a loving husband, and an adorable daughter. It’s a day like any other when she takes Hannah to the pediatrician…until she wakes hours later from a car accident. When she asks for her daughter, confused doctors tell Annie that Hannah never existed. In fact, nothing after waking from the crash is the same as Annie remembers. Five happy years of her life apparently never happened.nnAnnie’s marriage is coming to an end. Now a successful artist living in Manhattan, she’s no longer home in their beloved upstate farmhouse. Her long-estranged sister is more like a best friend, and her recently deceased dog is alive and well. With each passing day, Annie’s remembered past and unfamiliar present begin to blur. Haunted by visions of Hannah, and with knowledge of things she can’t explain, Annie wonders…is everyone lying to her?nnThe search for answers leads Annie down an illuminating path far from home, to reconcile the memories with reality and to discover the truth about the life she’s living.",
+    "rating": 4.31,
+    "ratings": 6549,
+    "publicationYear": 2021,
+    "availability": "In Stock",
+    "genre": "Mystery",
+    "price": "$15"
+  },
