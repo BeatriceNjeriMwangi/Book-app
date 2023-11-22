@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 
-
 const BookList = ({ books: bookData, onAddToCart, onDetails }) => {
   useEffect(() => {
     console.log(bookData);
@@ -8,7 +7,6 @@ const BookList = ({ books: bookData, onAddToCart, onDetails }) => {
 
   return (
     <div className="book-list-container">
-      <h2>Book Haven Library</h2>
       {bookData.map((book) => (
         <div className="book-card" key={book.id}>
           <img src={book.imageURL}/>
