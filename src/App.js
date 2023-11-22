@@ -8,7 +8,6 @@ function App() {
 
   const API_URL = "https://json-server-books.onrender.com/books";
  
-
   useEffect(() => {
     fetchData();
   }, []);
