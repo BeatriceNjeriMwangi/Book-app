@@ -4,8 +4,9 @@ import BookList from "./pages/Books";
 import "./styles/booklist.css"
 import Header from "./Components/Header";
 import { Routes, Route } from "react-router-dom";
-import Search from "./pages/Search";
+import Navbar from './Components/Navbar';
 import ShoppingCart from "./pages/ShoppingCart";
+import BookDetails from './pages/BookDetails';
 
 
 function App() {
@@ -30,17 +31,13 @@ function App() {
 
   return (
     <>
+    <Navbar />
     <Header />
     <Routes>
       <Route path="/" element={<BookList books={books} />}></Route>
-      {/* <Route path="/search" element={<Search books={books} />}></Route>
       <Route path="/cart" element={<ShoppingCart books={books} />}></Route>
-      <Route path="/details" element={<ShoppingCart books={books} />}></Route>
-      <Route path="/add" element={<ShoppingCart books={books} />}></Route>
-      <Route path="/edit" element={<ShoppingCart books={books} />}></Route>
-      <Route path="/delete" element={<ShoppingCart books={books} />}></Route>
-      <Route path="/checkout" element={<ShoppingCart books={books} />}></Route> */}
-      
+      <Route path="/details" element={<BookDetails books={books} />}></Route>
+         
 
 
       {/* <Route path="/category" element={<ShoppingCart books={books} />}></Route> */}
