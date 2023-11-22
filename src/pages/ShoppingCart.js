@@ -10,12 +10,14 @@ export default function ShoppingCart () {
            <ul>
             {CartItems.map((item) => {
                 return(
+                    <>
                     <li className="cart-item">
                       <span>{item.title}</span>
                       <img src={item.image_url} />
                       <span>{item.price}</span>
                     </li>
                     <button id='cart-button'> Remove from cart </button>
+                    </>
                     
                 )
             })}
