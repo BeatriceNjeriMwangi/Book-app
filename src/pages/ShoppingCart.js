@@ -11,6 +11,7 @@ export default function ShoppingCart () {
             {CartItems.map((item) => {
                 return(
                     <>
+
                     <div>
                     <li className="cart-item">
                       <span>{item.title}</span>
@@ -18,8 +19,12 @@ export default function ShoppingCart () {
                       <span>{item.price}</span>
                     </li>
                     <button id='cart-button'> Remove from cart </button>
+
                     </div>
-                    </>
+                    
+                   </>
+                    
+
                 )
             })}
            </ul>

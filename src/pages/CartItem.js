@@ -1,17 +1,16 @@
 import React from 'react';
 
-function CartItem({ item }) {
-  return (
-    <li className="cart-item">
-      <span>{item.title}</span>
-      <span>Quantity: {item.quantity}</span>
-      <span>${item.price * item.quantity}</span>
-      <button>Remove</button>
-    
-
-      {/* Add a button to remove the item from the cart */}
-    </li>
-  );
-}
+const CartItem = ({ item, onRemoveItem }) => {
+    return (
+        <div>
+            <li className="cart-item">
+                <span>{item.title}</span>
+                <img src={item.image_url} alt='book' />
+                <span>{item.price}</span>
+                <button onClick={() => onRemoveItem(item.id)}>Remove from cart</button>
+            </li>
+        </div>
+    );
+};
 
 export default CartItem;
