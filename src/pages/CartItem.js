@@ -6,6 +6,9 @@ function CartItem({ item }) {
       <span>{item.title}</span>
       <span>Quantity: {item.quantity}</span>
       <span>${item.price * item.quantity}</span>
+      <button>Remove</button>
+    
+
       {/* Add a button to remove the item from the cart */}
     </li>
   );
