@@ -1,24 +1,14 @@
 import { useEffect } from "react";
 
-
-const BookList = ({ books: bookData, onAddToCart, onDetails }) => {
-  useEffect(() => {
-    console.log(bookData);
-  }, [bookData]);
-
+function CartItem({ item }) {
   return (
-    <div className="book-list-container">
-      <h2>Book Haven Library</h2>
-      {bookData.map((book) => (
-        <div className="book-card" key={book.id}>
-          <img src={book.imageURL}/>
-          <li>{book.title}</li>
-          <button onClick={() => onAddToCart(book)}>Add to Cart</button>
-          <button onClick={() => onDetails(book)}>Details</button>
-        </div>
-      ))}
-    </div>
+    <li className="cart-item">
+      <span>{item.title}</span>
+      <span>Quantity: {item.quantity}</span>
+      <span>${item.price * item.quantity}</span>
+      {/* Add a button to remove the item from the cart */}
+    </li>
   );
-};
+}
 
-export default BookList;
+export default CartItem;
