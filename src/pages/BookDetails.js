@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const bookitem = () => {
+export default function BookDetails () {
 
     return (
         <div>

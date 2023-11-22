@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import BookList from "./pages/booklist";
+import BookList from "./pages/Books";
 import "./styles/booklist.css"
 
 function App() {
