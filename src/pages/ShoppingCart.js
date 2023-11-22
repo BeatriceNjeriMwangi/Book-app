@@ -1,34 +1,25 @@
 import React from 'react';
 import CartItem from './CartItem';
 
+function ShoppingCart() {
+  // Manage state for items in the shopping cart
 
-export default function ShoppingCart () {
-    const CartItems = [...CartItem]
-    return ( 
-        <aside className='shopping-cart'>
-        <h2>ShoppingCart</h2>
-           <ul>
-            {CartItems.map((item) => {
-                return(
-                    <>
+  const cartItems = [
+    // Cart item data (id, title, quantity, price, etc.)
+  ];
 
-                    <div>
-                    <li className="cart-item">
-                      <span>{item.title}</span>
-                      <img src={item.image_url} alt='book' />
-                      <span>{item.price}</span>
-                    </li>
-                    <button id='cart-button'> Remove from cart </button>
-
-                    </div>
-                    
-                   </>
-                    
-
-                )
-            })}
-           </ul>
-    
-        </aside>
-    )
+  return (
+    <aside className="shopping-cart">
+      <h2>Shopping Cart</h2>
+      <ul>
+        {cartItems.map((item) => (
+          <CartItem key={item.id} item={item} />
+        ))}
+      </ul>
+      {/* Add total price and a checkout button */}
+    </aside>
+  );
 }
+
+export default ShoppingCart;
+ 
