@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Header(){
+function Search(){
     return(
         <header>
             <h1>Books Haven</h1>
         </header>
     )
 }
-export default Header;
+export default Search;
