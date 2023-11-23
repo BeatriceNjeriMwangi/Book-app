@@ -22,7 +22,7 @@ function App() {
   const fetchData = () => {
     fetch(API_URL)
       .then(response => response.json())
-      .then((data) => {
+      .then((data) => { 
         setBooks(data || []);
       })
       .catch((error) => {
