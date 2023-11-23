@@ -11,7 +11,7 @@ import BookDetails from './pages/BookDetails';
 
 function App() {
   const [books, setBooks] = useState([]);
-  const [CartItems, setCartItems] = useState([])
+  const [cartItems, setCartItems] = useState([])
 
   const API_URL = "https://json-server-books.onrender.com/books";
  
@@ -30,17 +30,15 @@ function App() {
       });
   };
 
-  function handleAddToCart(){
-    const newItems = [...CartItems, books];
-    setCartItems(newItems);
+  function handleAddToCart(book){
+    if (!cartItems.some((cartItem) => cartItem.id === book.id)) {
+
+    setCartItems([...cartItems, {...books}]);
     console.log(`${book.title} added to the shopping cart.`);
-
-
-  }
-  function handleClick(){
     
-  }  
 
+    }
+  }
 
 
   return (
