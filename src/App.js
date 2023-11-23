@@ -11,6 +11,7 @@ import BookDetails from './pages/BookDetails';
 
 function App() {
   const [books, setBooks] = useState([]);
+  const [CartItems, setCartItems] = useState([])
 
   const API_URL = "https://json-server-books.onrender.com/books";
  
@@ -29,14 +30,27 @@ function App() {
       });
   };
 
+  function HandleAddToCart(){
+    const newItems = [...CartItems, books];
+    setCartItems(newItems);
+    console.log(`${book.title} added to the shopping cart.`);
+
+
+  }
+  function HandleClick(){
+
+  }
+
+
+
   return (
     <>
     <Navbar />
     <Header />
     <Routes>
-      <Route path="/" element={<BookList books={books} />}></Route>
-      <Route path="/cart" element={<ShoppingCart books={books} />}></Route>
-      <Route path="/details" element={<BookDetails books={books} />}></Route>
+      <Route path="/" element={<BookList books={books} addToCart={handleAddToCart}/>}></Route>
+      <Route path="/cart" element={<ShoppingCart cartItems={cartItems}  />}></Route>
+      
          
 
 
