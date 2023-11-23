@@ -1,28 +1,16 @@
-import React, { useEffect} from 'react';
+import React from 'react';
 import CartItem from "./CartItem";
 
-
-export default function ShoppingCart ({cartItems}) { 
-const MyFetch = () => {useEffect(() => {
-  fetching();
-}, []);}
-
-function fetching () {
-  fetch("https://json-server-books.onrender.com/cart",   {
-    method: "POST",
-    body: myMap(),
-  }); 
- 
-  
-  
-
-}
-
- const myMap = (item) => {
+export default function ShoppingCart({ cartItems, onRemoveFromCart, onProceedToCheckout }) {
   return (
-    <CartItem />
-  )
- }
- return myMap
+    <div>
+      <h2>Shopping Cart</h2>
+      <ul>
+        {cartItems.map((item) => (
+          <CartItem key={item.id} item={item} onRemoveFromCart={onRemoveFromCart} />
+        ))}
+      </ul>
+      <button onClick={onProceedToCheckout}>Proceed to Checkout</button>
+    </div>
+  );
 }
-

@@ -1,46 +1,17 @@
-import React, { useState } from 'react';
+// CartItem.js
 
-const CartItem = ({ item, onRemoveItem, onBuyItem }) => {
-  const [quantity, setQuantity] = useState(1);
-  const [isPurchaseSuccessful, setPurchaseSuccessful] = useState(false);
+import React from 'react';
 
-  const handleRemoveItem = () => {
-    onRemoveItem(item.id);
-  };
-
-  const handleBuyClick = () => {
-    onBuyItem(item, quantity);
-
-    // Simulate a successful purchase
-    setPurchaseSuccessful(true);
-
-    // Reset purchase status after a delay
-    setTimeout(() => {
-      setPurchaseSuccessful(false);
-    }, 2000);
-  };
-
+const CartItem = ({ item, onRemoveFromCart }) => {
   return (
-    <div>
-      <li className="cart-item" key={item.id}>
-        <span>{item.title}</span>
-        <img src={item.image_url} alt="book" />
-        <span>{item.price}</span>
-        <input
-          type="number"
-          min="1"
-          value={quantity}
-          onChange={(e) => setQuantity(e.target.value)}
-        />
-        <button onClick={handleRemoveItem}>Remove from cart</button>
-        <button onClick={handleBuyClick}>Buy</button>
-
-        {isPurchaseSuccessful && (
-          <div className="purchase-success-popup">
-            Purchase successful!
-          </div>
-        )}
-      </li>
+    <div className="cart-item-card">
+      <img src={item.imageURL} alt={item.title} />
+      <div>
+        <h3>{item.title}</h3>
+        <p>Author: {item.author}</p>
+        <p>Price: {item.price}</p>
+        <button onClick={() => onRemoveFromCart(item)}>Remove from cart</button>
+      </div>
     </div>
   );
 };
