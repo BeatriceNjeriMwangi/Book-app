@@ -11,6 +11,7 @@ import BookDetails from './pages/BookDetails';
 function App() {
   const [books, setBooks] = useState([]);
   const [cartItems, setCartItems] = useState([])
+  const [filteredBooks, setFilteredBooks] = useState([]);
 
   const API_URL = "https://json-server-books.onrender.com/books";
   const CART_API_URL = "https://json-server-books.onrender.com/cart";
@@ -18,6 +19,13 @@ function App() {
   useEffect(() => {
     fetchData();
   }, []);
+  const handleSearch = (searchTerm) => {
+    // Filter the books based on the search term
+    const filtered = books.filter((book) =>
+      book.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredBooks(filtered);
+  };
 
   const fetchData = () => {
     fetch(API_URL)
@@ -50,11 +58,11 @@ function App() {
   return (
     <>
       <Navbar />
-      <Header />
+      <Header onSearch={handleSearch}/>
       <Routes>
         <Route
           path="/"
-          element={<BookList books={books} addToCart={handleAddToCart} />}
+          element={<BookList  books={filteredBooks.length > 0 ? filteredBooks : books} addToCart={handleAddToCart} />}
         ></Route>
         <Route
           path="/cart"
