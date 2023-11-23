@@ -5,7 +5,7 @@ const CartItem = ({ item, onRemoveItem }) => {
      onRemoveItem = (item) => {
         return(item.id !== item.key);
     }; 
-    
+
 
 
     return (
