@@ -1,38 +1,73 @@
-.App {
+/* styles.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  background-color: #4caf50;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.navbar a {
+  float: left;
+  display: block;
   color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+.book-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.book-card,
+.cart-item-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  max-width: 200px;
+}
+
+.book-card img,
+.cart-item-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.cart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.cart-item-card div {
+  margin-left: 10px;
+}
+
+.cart-item-card button {
+  background-color: #f44336;
+  color: white;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-item-card button:hover {
+  background-color: #d32f2f;
 }
