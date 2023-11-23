@@ -19,7 +19,7 @@ const BookList = ({ books, addToCart }) => {
             <button onClick={() => addToCart(book)}>Add to Cart</button>
             <button onClick={() => handleDetailsClick(book)}>Details</button>
             {selectedBook && selectedBook.id === book.id && (
-              <BookDetails book={selectedBook} addToCart={onAddToCart} />
+              <BookDetails book={selectedBook} addToCart={addToCart} />
             )}
           </div>
         ))}
