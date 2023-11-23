@@ -2,14 +2,17 @@ import React, { useEffect} from 'react';
 import CartItem from "./CartItem";
 
 
-export default function ShoppingCart ({CartItems}) { 
+export default function ShoppingCart ({cartItems}) { 
 const MyFetch = () => {useEffect(() => {
   fetching();
 }, []);}
 
 function fetching () {
-  fetch("https://json-server-books.onrender.com/cart"); 
-  method: "POST";
+  fetch("https://json-server-books.onrender.com/cart",   {
+    method: "POST",
+    body: myMap(),
+  }); 
+ 
   
   
 
