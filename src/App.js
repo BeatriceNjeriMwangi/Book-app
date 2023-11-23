@@ -46,7 +46,7 @@ function App() {
     <Header />
     <Routes>
       <Route path="/" element={<BookList books={books} addToCart={handleAddToCart}/>}></Route>
-      <Route path="/cart" element={<ShoppingCart cartItems={CartItems}  />}></Route>
+      <Route path="/cart" element={<ShoppingCart cartItems={cartItems}  />}></Route>
 
       
          
