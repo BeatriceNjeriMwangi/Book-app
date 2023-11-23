@@ -30,7 +30,7 @@ function App() {
       });
   };
 
-  function HandleAddToCart(){
+  function handleAddToCart(){
     const newItems = [...CartItems, books];
     setCartItems(newItems);
     console.log(`${book.title} added to the shopping cart.`);
@@ -49,16 +49,11 @@ function App() {
     <Header />
     <Routes>
       <Route path="/" element={<BookList books={books} addToCart={handleAddToCart}/>}></Route>
-      <Route path="/cart" element={<ShoppingCart cartItems={cartItems}  />}></Route>
+      <Route path="/cart" element={<ShoppingCart cartItems={CartItems}  />}></Route>
       
          
 
 
-      {/* <Route path="/category" element={<ShoppingCart books={books} />}></Route> */}
-
-
-
-      {/* <Route path='/category' element={<Category books={books}/>}</Route> */}
      
       
    
@@ -66,14 +61,7 @@ function App() {
     </Routes>
    
     </>
-    // <div className = "App">
-    //   <div>
-    //   <h1>Books Haven</h1>
-    //   </div>
-    //   <BookList books={books} />
-
-      
-    // </div>
+    
   );
 }
 
