@@ -34,7 +34,6 @@ function App() {
     if (!cartItems.some((cartItem) => cartItem.id === book.id)) {
 
     setCartItems([...cartItems, {...books}]);
-    console.log(`${book.title} added to the shopping cart.`);
     
 
     }
