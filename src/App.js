@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import BookList from "./pages/Books";
 import "./styles/booklist.css"
 import Header from "./Components/Header";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route,  } from "react-router-dom";
 import Navbar from './Components/Navbar';
 import ShoppingCart from "./pages/ShoppingCart";
-import BookDetails from './pages/BookDetails';
+//import BookDetails from './pages/BookDetails';
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -14,7 +14,7 @@ function App() {
   const [filteredBooks, setFilteredBooks] = useState([]);
 
   const API_URL = "https://json-server-books.onrender.com/books";
-  const CART_API_URL = "https://json-server-books.onrender.com/cart";
+ // const CART_API_URL = "https://json-server-books.onrender.com/cart";
 
   useEffect(() => {
     fetchData();
