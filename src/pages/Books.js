@@ -1,7 +1,10 @@
-import { useState, useEffect } from "react";
-import BookDetails from "./BookDetails";
 
-const BookList = ({ books, onAddToCart, onDetails }) => {
+
+import { useState } from "react";
+import BookDetails from "./BookDetails";
+// import '.../styles/booklist.css'
+const BookList = ({ books, addToCart }) => {
+
   const [selectedBook, setSelectedBook] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -20,24 +23,19 @@ const BookList = ({ books, onAddToCart, onDetails }) => {
   return (
     <>
       <h2>Book Haven Library</h2>
-      <div>
-        <input
-          type="text"
-          placeholder="Search by title"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </div>
+
+
       <div className="book-list-container">
-        {filteredBooks.map((book) => (
+        {books.map((book) => (
           <div className="book-card" key={book.id}>
             <img src={book.imageURL} alt={book.title} />
             <li>{book.title}</li>
-            <button onClick={() => handleAddCartClick(book)}>Add to Cart</button>
+            <button onClick={() => addToCart(book)}>Add to Cart</button>
             <button onClick={() => handleDetailsClick(book)}>Details</button>
-
             {selectedBook && selectedBook.id === book.id && (
-              <BookDetails book={selectedBook} onAddToCart={onAddToCart} />
+              <BookDetails book={selectedBook} addToCart={addToCart} />
+
+
             )}
           </div>
         ))}
@@ -46,4 +44,5 @@ const BookList = ({ books, onAddToCart, onDetails }) => {
   );
 };
 
-export default BookList;
+
+export default BookList;
