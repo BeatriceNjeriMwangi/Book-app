@@ -8,10 +8,6 @@ import Navbar from './Components/Navbar';
 import ShoppingCart from "./pages/ShoppingCart";
 
 
-// App.js
-
-// ... (other imports and code)
-
 function App() {
   const [books, setBooks] = useState([]);
   const [cartItems, setCartItems] = useState([]);
