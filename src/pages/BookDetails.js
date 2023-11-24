@@ -19,4 +19,5 @@ const BookDetails = ({ book, onAddToCart }) => {
   );
 };
 
+
 export default BookDetails;

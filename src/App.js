@@ -10,8 +10,8 @@ import ShoppingCart from "./pages/ShoppingCart";
 
 function App() {
   const [books, setBooks] = useState([]);
-  const [cartItems, setCartItems] = useState([])
-  const [filteredBooks, setFilteredBooks] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
+  const [filteredBooks, setFilteredBooks] = useState([]);  // Initialize to all books
 
   const API_URL = "https://json-server-books.onrender.com/books";
   const CART_API_URL = "https://json-server-books.onrender.com/cart";
@@ -19,25 +19,26 @@ function App() {
   useEffect(() => {
     fetchData();
   }, []);
+
   const handleSearch = (searchTerm) => {
     // If the search term is empty, return all books
     if (searchTerm === '') {
       setFilteredBooks(books);
     } else {
-      // Filter the books based on whether the search term is a substring of the title
+      // Filter the books based on an exact match of the title
       const filtered = books.filter((book) =>
-      book.title.toLowerCase() === searchTerm.toLowerCase()
-    );
-    setFilteredBooks(filtered);
-  }
-};
-    
+        book.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredBooks(filtered);
+    }
+  };
 
   const fetchData = () => {
     fetch(API_URL)
-      .then(response => response.json())
-      .then((data) => { 
+      .then((response) => response.json())
+      .then((data) => {
         setBooks(data || []);
+        setFilteredBooks(data || []);  // Set filteredBooks to all books initially
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
@@ -46,30 +47,30 @@ function App() {
 
   const handleAddToCart = (book) => {
     if (!cartItems.some((cartItem) => cartItem.id === book.id)) {
-      setCartItems([...cartItems, {...book}]);
+      setCartItems([...cartItems, { ...book }]);
     }
-  }
+  };
 
   const handleRemoveFromCart = (book) => {
     const updatedCartItems = cartItems.filter((item) => item.id !== book.id);
     setCartItems(updatedCartItems);
-  }
+  };
 
   const handleProceedToCheckout = () => {
     // Add logic for handling the checkout process
     // For now, let's just clear the cartItems array
     setCartItems([]);
-    alert("Purchase Successful!")
-  }
+    alert('Purchase Successful!');
+  };
 
   return (
     <>
       <Navbar />
-      <Header onSearch={handleSearch}/>
+      <Header onSearch={handleSearch} />
       <Routes>
         <Route
           path="/"
-          element={<BookList  books={filteredBooks.length > 0 ? filteredBooks : books} addToCart={handleAddToCart} />}
+          element={<BookList books={filteredBooks} addToCart={handleAddToCart} />}
         ></Route>
         <Route
           path="/cart"
