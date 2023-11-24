@@ -7,6 +7,8 @@ const BookDetails = ({ book, onAddToCart }) => {
     <div className="book-details-template">
 
 
+
+
       <p>Author: {book.author}</p>
       <p>{book.description}</p>
       <p>Year: {book.publicationYear}</p>
