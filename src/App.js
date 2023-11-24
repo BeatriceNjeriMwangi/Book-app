@@ -6,7 +6,7 @@ import Header from "./Components/Header";
 import { Routes, Route, Link } from "react-router-dom";
 import Navbar from './Components/Navbar';
 import ShoppingCart from "./pages/ShoppingCart";
-import BookDetails from './pages/BookDetails';
+
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -20,12 +20,18 @@ function App() {
     fetchData();
   }, []);
   const handleSearch = (searchTerm) => {
-    // Filter the books based on the search term
-    const filtered = books.filter((book) =>
-      book.title.toLowerCase().includes(searchTerm.toLowerCase())
+    // If the search term is empty, return all books
+    if (searchTerm === '') {
+      setFilteredBooks(books);
+    } else {
+      // Filter the books based on whether the search term is a substring of the title
+      const filtered = books.filter((book) =>
+      book.title.toLowerCase() === searchTerm.toLowerCase()
     );
     setFilteredBooks(filtered);
-  };
+  }
+};
+    
 
   const fetchData = () => {
     fetch(API_URL)
@@ -53,6 +59,7 @@ function App() {
     // Add logic for handling the checkout process
     // For now, let's just clear the cartItems array
     setCartItems([]);
+    alert("Purchase Successful!")
   }
 
   return (
