@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-// import '../styles/bookslist.css';
+import "../styles/navbar.css"
 
 const Navbar = () => {
   const location = useLocation();

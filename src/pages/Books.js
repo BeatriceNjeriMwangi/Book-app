@@ -11,9 +11,9 @@ const BookList = ({ books, addToCart }) => {
   const handleDetailsClick = (book) => {
     setSelectedBook(book);
   };
-
-  const handleAddCartClick = (book) => {
-    onAddToCart(book);
+  
+  const handleGoBack = () => {
+    setSelectedBook(null);
   };
 
   const filteredBooks = books.filter((book) =>
@@ -33,7 +33,7 @@ const BookList = ({ books, addToCart }) => {
             <button onClick={() => addToCart(book)}>Add to Cart</button>
             <button onClick={() => handleDetailsClick(book)}>Details</button>
             {selectedBook && selectedBook.id === book.id && (
-              <BookDetails book={selectedBook} addToCart={addToCart} />
+              <BookDetails book={selectedBook} addToCart={addToCart} onGoBack={handleGoBack} />
 
 
             )}
