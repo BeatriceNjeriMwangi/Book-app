@@ -1,4 +1,5 @@
 
+
 import { useState } from "react";
 import BookDetails from "./BookDetails";
 // import '.../styles/booklist.css'
@@ -23,6 +24,7 @@ const BookList = ({ books, addToCart }) => {
     <>
       <h2>Book Haven Library</h2>
 
+
       <div className="book-list-container">
         {books.map((book) => (
           <div className="book-card" key={book.id}>
@@ -33,6 +35,7 @@ const BookList = ({ books, addToCart }) => {
             {selectedBook && selectedBook.id === book.id && (
               <BookDetails book={selectedBook} addToCart={addToCart} onGoBack={handleGoBack} />
 
+
             )}
           </div>
         ))}
@@ -40,5 +43,6 @@ const BookList = ({ books, addToCart }) => {
     </>
   );
 };
+
 
 export default BookList;

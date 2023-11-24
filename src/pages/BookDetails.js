@@ -3,6 +3,8 @@ import React from "react";
 const BookDetails = ({ book, onGoBack }) => {
   return (
     <div className="book-details-template">
+
+
       <p>Author: {book.author}</p>
       <p>{book.description}</p>
       <p>Year: {book.publicationYear}</p>
