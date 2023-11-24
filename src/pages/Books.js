@@ -1,16 +1,28 @@
+
 import { useState } from "react";
 import BookDetails from "./BookDetails";
 
 const BookList = ({ books, addToCart }) => {
+
   const [selectedBook, setSelectedBook] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleDetailsClick = (book) => {
     setSelectedBook(book);
   };
 
+  const handleAddCartClick = (book) => {
+    onAddToCart(book);
+  };
+
+  const filteredBooks = books.filter((book) =>
+    book.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <>
       <h2>Book Haven Library</h2>
+
       <div className="book-list-container">
         {books.map((book) => (
           <div className="book-card" key={book.id}>
@@ -20,6 +32,7 @@ const BookList = ({ books, addToCart }) => {
             <button onClick={() => handleDetailsClick(book)}>Details</button>
             {selectedBook && selectedBook.id === book.id && (
               <BookDetails book={selectedBook} addToCart={addToCart} />
+
             )}
           </div>
         ))}
@@ -28,4 +41,4 @@ const BookList = ({ books, addToCart }) => {
   );
 };
 
-export default BookList;
+export default BookList;

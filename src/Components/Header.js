@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 
+
 function Header({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
+
 
   const handleSearch = (e) => {
     e.preventDefault();
