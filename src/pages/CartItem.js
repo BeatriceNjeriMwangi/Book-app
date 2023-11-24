@@ -16,4 +16,6 @@ const CartItem = ({ item, onRemoveFromCart }) => {
   );
 };
 
+
 export default CartItem;
+

@@ -1,16 +1,20 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import "../styles/navbar.css"
 
+const Navbar = () => {
+  const location = useLocation();
 
-function Navbar(){
-    return(
-        <div>
-            <NavLink to="/">Books</NavLink>
-            <NavLink to="/details">BookDetails</NavLink>
-            <NavLink to="/cart">ShoppingCart</NavLink>
-            
-            
-        </div>
-    )
-}
+  return (
+    <nav>
+      <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>
+        Books
+      </Link>
+      <Link to="/cart" className={`nav-link ${location.pathname === '/cart' ? 'active' : ''}`}>
+        ShoppingCart
+      </Link>
+    </nav>
+  );
+};
+
 export default Navbar;
