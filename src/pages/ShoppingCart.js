@@ -10,7 +10,7 @@ export default function ShoppingCart({ cartItems, onRemoveFromCart, onProceedToC
           <CartItem key={item.id} item={item} onRemoveFromCart={onRemoveFromCart} />
         ))}
       </ul>
-      <button onClick={onProceedToCheckout}>Proceed to Checkout</button>
+      <button onClick={onProceedToCheckout}>Purchase books</button>
     </div>
   );
 }
